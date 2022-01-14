@@ -18,7 +18,6 @@ using namespace std;
 
 int MeniuIsButtonPressed()
 {
-	if((sPlay.getGlobalBounds().contains(renderWindow.mapPixelToCoords(sf::Mouse::getPosition(renderWindow)))))
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left) == true)
 		{
 			sf::Vector2i pozitieCursor = sf::Mouse::getPosition();

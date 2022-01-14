@@ -328,6 +328,106 @@ int Play(int niv)
             if (!fopen_s(&fis, "niv10.txt", "r"))
                 initNivel();
         }
+        else if (niv == 11)
+        {
+            if (!fopen_s(&fis, "niv11.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 12)
+        {
+            if (!fopen_s(&fis, "niv12.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 13)
+        {
+            if (!fopen_s(&fis, "niv13.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 14)
+        {
+            if (!fopen_s(&fis, "niv14.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 15)
+        {
+            if (!fopen_s(&fis, "niv15.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 16)
+        {
+            if (!fopen_s(&fis, "niv16.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 17)
+        {
+            if (!fopen_s(&fis, "niv17.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 18)
+        {
+            if (!fopen_s(&fis, "niv18.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 19)
+        {
+            if (!fopen_s(&fis, "niv19.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 20)
+        {
+            if (!fopen_s(&fis, "niv20.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 21)
+        {
+            if (!fopen_s(&fis, "niv21.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 22)
+        {
+            if (!fopen_s(&fis, "niv22.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 23)
+        {
+            if (!fopen_s(&fis, "niv23.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 24)
+        {
+            if (!fopen_s(&fis, "niv24.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 25)
+        {
+            if (!fopen_s(&fis, "niv25.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 26)
+        {
+            if (!fopen_s(&fis, "niv26.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 27)
+        {
+            if (!fopen_s(&fis, "niv27.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 28)
+        {
+            if (!fopen_s(&fis, "niv28.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 29)
+        {
+            if (!fopen_s(&fis, "niv29.txt", "r"))
+                initNivel();
+        }
+        else if (niv == 30)
+        {
+            if (!fopen_s(&fis, "niv30.txt", "r"))
+                initNivel();
+        }
         //float width=1920, height=1080;
 
         nivUrm = niv + 1;
@@ -343,6 +443,31 @@ int Play(int niv)
         {
             cout << "Eroare" << endl;
         }
+
+        sf::Texture stele0;
+        if (!stele0.loadFromFile("images/0stele.png"))
+        {
+            cout << "Eroare" << endl;
+        }
+        sf::Texture stele1;
+        if (!stele1.loadFromFile("images/1stea.png"))
+        {
+            cout << "Eroare" << endl;
+        }
+        sf::Texture stele2;
+        if (!stele2.loadFromFile("images/2stele.png"))
+        {
+            cout << "Eroare" << endl;
+        }
+        sf::Texture stele3;
+        if (!stele3.loadFromFile("images/3stele.png"))
+        {
+            cout << "Eroare" << endl;
+        }
+
+        sf::Sprite stele;
+        stele.setScale(0.2f, 0.2f);
+        stele.setPosition(900.0f, 325.0f);
 
         sf::Text timp("", font);
         timp.setPosition(100, 900);
@@ -590,10 +715,6 @@ int Play(int niv)
             renderWindow.draw(spiesa4);
             renderWindow.draw(PbackButton);
             renderWindow.draw(timp);
-            /*renderWindow.draw(cufar);
-            renderWindow.draw(victory);
-            renderWindow.draw(bNext);
-            renderWindow.draw(tNext);*/
 
             if (PisButtonPressed() == 0)
                 return 0;
@@ -1141,14 +1262,22 @@ int Play(int niv)
                 renderWindow.draw(victory);
                 renderWindow.draw(bNext);
                 renderWindow.draw(tNext);
-                
+                renderWindow.draw(stele);
                 if (tVictorie <= 30)
+                {
                     vStele[niv] = 3;
+                    stele.setTexture(stele1);
+                }
                 else if (tVictorie >= 30 && tVictorie <= 45)
+                {
                     vStele[niv] = 2;
+                    stele.setTexture(stele2);
+                }
                 else
+                {
                     vStele[niv] = 1;
-
+                    stele.setTexture(stele3);
+                }
             }
 
             renderWindow.display();
